@@ -1,8 +1,13 @@
 import 'package:clima_weather_app/constants/style.dart';
+import 'package:clima_weather_app/controller/weather_controller.dart';
+import 'package:clima_weather_app/screens/city_screen.dart';
+import 'package:clima_weather_app/services/weather.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class IconButtonWidget extends StatelessWidget {
-  String buttonType;
+  final String buttonType;
+  final WeatherController weatherController = Get.find<WeatherController>();
 
   IconButtonWidget({super.key, required this.buttonType});
 
@@ -12,7 +17,14 @@ class IconButtonWidget extends StatelessWidget {
       padding: const EdgeInsets.all(16.0),
       child: TextButton(
         style: kTextButtonStyle(),
-        onPressed: () {},
+        onPressed: () async {
+          if (buttonType == "location") {
+            var weatherData = await WeatherModel().getLocationWeather();
+            weatherController.getWeatherData(weatherData);
+          } else {
+            Get.to(() =>  const CityChoiceScreen());
+          }
+        },
         child: buttonType == "location"
             ? const Icon(
                 Icons.near_me,

@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 const kTempTextStyle =
     TextStyle(fontFamily: 'Spartan MB', fontSize: 100.0, color: Colors.white);
 
+const kTextFieldStyle = TextStyle(fontSize: 17.0, color: Colors.black87);
+
 const kMessageTextStyle =
     TextStyle(fontFamily: 'Spartan MB', fontSize: 40.0, color: Colors.white);
 

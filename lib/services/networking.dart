@@ -16,7 +16,7 @@ class NetworkHelper {
       log(data.toString());
       return jsonDecode(data);
     } else {
-      print(response.body);
+      log(response.body);
     }
   }
 }

@@ -7,7 +7,7 @@ import 'package:get/get.dart';
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
 
-  WeatherController weatherController = Get.find<WeatherController>();
+  final WeatherController weatherController = Get.find<WeatherController>();
 
   @override
   Widget build(BuildContext context) {

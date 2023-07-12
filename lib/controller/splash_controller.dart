@@ -12,7 +12,6 @@ class SplashScreenController extends GetxController {
 
   navigateToHome() async {
     var weatherData = await WeatherModel().getLocationWeather();
-    print(weatherData.toString());
     WeatherController weatherController = Get.find<WeatherController>();
     weatherController.getWeatherData(weatherData);
     await Future.delayed(const Duration(seconds: 3), () {});

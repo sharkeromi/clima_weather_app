@@ -4,8 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
-
-
 void main() {
   InitialBinding().dependencies();
   WidgetsFlutterBinding.ensureInitialized();
@@ -23,7 +21,6 @@ void main() {
 class Clima extends StatelessWidget {
   const Clima({super.key});
 
-  
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(

@@ -1,9 +1,12 @@
 import 'package:clima_weather_app/services/weather.dart';
+import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 
 class WeatherController extends GetxController {
+
   WeatherModel weatherModel = WeatherModel();
+
   RxDouble temperature = RxDouble(0.0);
   RxString weatherIcon = RxString('');
   RxString cityName = RxString('');
@@ -11,6 +14,8 @@ class WeatherController extends GetxController {
   RxString weatherMessage = RxString(''); 
   RxString country = RxString('');
   RxString message = RxString('');
+
+  TextEditingController searchCity = TextEditingController();
 
   getWeatherData(weatherData) {
     if (weatherData == null) {
